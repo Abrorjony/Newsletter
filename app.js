@@ -117,7 +117,10 @@ app.post('/', function (req, res) {
 app.post('/failure',function (req,res){
   res.redirect('/')
 })
-app.listen(5355, function () {
-  console.log('Server is running on port 5355 😁');
+const port = process.env.PORT || 5355; 
+// Use the environment variable PORT or fallback to 5355
+
+app.listen(port, function () {
+  console.log(`Server is running on port ${port} 😁`);
 });
 
